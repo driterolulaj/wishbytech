@@ -1,3 +1,47 @@
-import { createContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
-export const GlobalContext = createContext({})
+
+const initialState = {
+  isLoading: true,
+  hits: [],
+  query: "react",
+  page: 0,
+  nbPages: 0,
+};
+
+const AppContext = React.createContext();
+
+const AppProvider = ({ children }) => {
+	const main_light_blue = "#4c9cb8";
+  const main_dark_blue = "#103045";
+	const main_dark = "#10131b"
+	const main_light ="#D9DDDc"
+  const [ lightTheme, setLightTheme ] = useState(true)
+	const [currentTheme, setCurrentTheme] = useState({
+		mainBlue:lightTheme?main_light_blue:main_dark_blue,
+		secondaryBlue:lightTheme?main_dark_blue:main_light_blue,
+		bgbody:lightTheme?main_dark:main_light,
+		textbody:lightTheme?main_light:main_dark,
+	})
+	useContext(()=>{
+		setCurrentTheme({
+			mainBlue:lightTheme?main_light_blue:main_dark_blue,
+			secondaryBlue:lightTheme?main_dark_blue:main_light_blue,
+			bgbody:lightTheme?main_dark:main_light,
+			textbody:lightTheme?main_light:main_dark}
+		)
+	},lightTheme)
+
+  return (
+    <AppContext.Provider
+      value={{setLightTheme,lightTheme,main_dark,main_dark_blue,main_light,main_light_blue,currentTheme}}
+    >
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+export const useGlobalContext = () => {
+  return useContext(AppContext);
+};
+export { AppContext, AppProvider };
