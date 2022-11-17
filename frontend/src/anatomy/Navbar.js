@@ -57,7 +57,7 @@ const Navbar = () => {
               flex: 20,
             }}
           >
-            <Navbtn text="Home"></Navbtn>
+            <Navbtn text="Home" ></Navbtn>
             <Navbtn text="Shop"></Navbtn>
             <Navbtn text="Oferta"></Navbtn>
             <Navbtn text="Faq"></Navbtn>
@@ -74,11 +74,11 @@ const Navbar = () => {
         </div>
       </div>
       <div style={style.hotbar}>
-        <a href="">Kompjutere, Laptop</a>
-        <a href="">Telefone, Tablet</a>
-        <a href="">Aksesore</a>
-        <a href="">Gaming</a>
-        <a href="">Tv, Foto, Audio</a>
+        <a href="" className="a">Kompjutere, Laptop</a>
+        <a href=""className="a">Telefone, Tablet</a>
+        <a href=""className="a">Aksesore</a>
+        <a href=""className="a">Gaming</a>
+        <a href=""className="a">Tv, Foto, Audio</a>
       </div>
     </div>
   );

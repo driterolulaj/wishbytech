@@ -1,23 +1,66 @@
+import { useContext } from "react";
+import { AppContext } from "../GlobalContext";
 
-const Card = ()=>{
 
-return(
-	
-<div className="product-card"><img className="product-img" src="https://image.shutterstock.com/z/stock-photo-vintage-red-shoes-on-white-background-92008067.jpg" alt="product" width="100%"/>
-  <div className="product-info">
-    <h3 className="product-title">product title</h3>
-    <div className="product-price"><span className="product-price-new">$ 123</span><span className="product-price-old">$ 456</span></div>
-    <div className="product-rate"><i className="fas fa-star icon active"></i><i className="fas fa-star icon active"></i><i className="fas fa-star-half-alt icon active"></i><i className="far fa-star icon"></i><i className="far fa-star icon"></i></div>
-    <div className="product-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam deleniti corrupti quam delectus placeat nihil, nobis dolore maxime ipsum sequi numquam, architecto accusantium quia excepturi, rerum labore harum iure.</div>
-    <div className="product-btn">
-			<button className="icon">Me shume</button>
 
-      <button>add to cart</button>
+const Card = () => {
+  const {
+    main_dark_blue,
+    main_light_blue,
+    lightTheme,
+    setLightTheme,
+    main_light,
+    main_dark,
+    currentTheme,
+  } = useContext(AppContext);
+
+  const style = {
+    cardContainer: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      backgroundColor: lightTheme ? currentTheme.bgbody : currentTheme.textbody,
+      color: lightTheme ? currentTheme.textbody : currentTheme.bgbody,
+      padding: 2,
+      width: "200px",
+      height: "300px",
+      margin: 1,
+      boxShadow: "none",
+    },
+    img: {
+      width: "150px",
+      height: "150px",
+      borderRadius: 10,
+    },
+    ps: {
+      opacity: "0.7",
+      fontSize: "0.9rem",
+      color: lightTheme ? currentTheme.textbody : currentTheme.bgbody,
+      // color: "green",
+      cursor: "pointer",
+      textTransform: "uppercase",
+      textDecoration: "none",
+      border: "none",
+      zIndex: 1,
+    }
+    ,
+  };
+
+  return (
+    <div style={style.cardContainer}>
+      <img
+        style={style.img}
+        src="https://external.webstorage.gr/mmimages/image/10/1/29/50/1421065-264x264-800x800-96x96-560x560.jpg"
+        alt=""
+      />
+     <a href="" style={style.ps}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nemo.
+      </a>
+      <h3> Lorem ipsum dolor sit.</h3>
     </div>
-  </div>
-</div>
-)
+    
+  );
+};
 
-}
-
-export default Card
+export default Card;
