@@ -19,14 +19,17 @@ const Card = () => {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      justifyContent: "space-evenly",
+      justifyContent: "center",
       backgroundColor: lightTheme ? currentTheme.bgbody : currentTheme.textbody,
       color: lightTheme ? currentTheme.textbody : currentTheme.bgbody,
-      padding: 2,
+      padding: " 10px",
       width: "200px",
-      height: "300px",
-      margin: 1,
+      height: "auto",
+      margin: "1.5px",
       boxShadow: "none",
+      border:`1px solid ${lightTheme ? currentTheme.textbody : currentTheme.bgbody}`,
+      borderRadius:5,
+      textAlign:"center"
     },
     img: {
       width: "150px",
@@ -35,7 +38,7 @@ const Card = () => {
     },
     ps: {
       opacity: "0.7",
-      fontSize: "0.9rem",
+      fontSize: "0.7rem",
       color: lightTheme ? currentTheme.textbody : currentTheme.bgbody,
       // color: "green",
       cursor: "pointer",
@@ -43,8 +46,10 @@ const Card = () => {
       textDecoration: "none",
       border: "none",
       zIndex: 1,
+      padding:10
     }
     ,
+   
   };
 
   return (
@@ -57,7 +62,7 @@ const Card = () => {
      <a href="" style={style.ps}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nemo.
       </a>
-      <h3> Lorem ipsum dolor sit.</h3>
+      <h3 > 99.99$</h3>
     </div>
     
   );

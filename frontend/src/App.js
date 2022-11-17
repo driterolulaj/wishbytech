@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./anatomy/Navbar";
 import Homescreen from "./screens/Homescreen";
-import "./App.css";
+import "../src/styles/App.css";
 const App = () => {
   return (
     <div className="App">

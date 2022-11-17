@@ -18,7 +18,7 @@ const CardContainer = ({children}) => {
 			gridGap:"2px",
 			flexWrap:"wrap",
 			gridTemplateColumns:" 1fr 1fr 1fr",
-			backgroundColor:lightTheme?currentTheme.textbody:currentTheme.bgbody,
+	
 			width:"fit-content",
 			height:"fit-content",
 			maxWidth:"60%"
